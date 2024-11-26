@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Dancing Script", cursive;
+  scroll-behavior: smooth;
+}
+
+/* Căn giữa tiêu đề */
+  .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Chiều cao toàn màn hình */
+    background-image: url("../Assignment 1/img/Background.png"); /* Đường dẫn tới ảnh nền */
+    background-size: cover; /* Đảm bảo ảnh phủ kín toàn bộ vùng nền */
+    background-position: center; /* Đặt ảnh ở giữa */
+    background-repeat: no-repeat; /* Không lặp lại ảnh nền */
+    color: #4b62ff; /* Màu chữ */
+    text-align: center;
+  }
+  
+  h1.text {
+    font-size: 9vw;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+h1.text span {
+  opacity: 0;
+  transform: translateY(30px);
+  display: inline-block;
+  animation: fadeInMove 0.8s forwards;
+}
+
+h1.text span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+h1.text span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+h1.text span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+h1.text span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+h1.text span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+h1.text span:nth-child(6) {
+  animation-delay: 0.6s;
+}
+h1.text span:nth-child(7) {
+  animation-delay: 0.7s;
+}
+h1.text span:nth-child(8) {
+  animation-delay: 0.8s;
+}
+h1.text span:nth-child(9) {
+  animation-delay: 0.9s;
+}
+h1.text span:nth-child(10) {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInMove {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* First page */
+.poem {
+  min-height: 100vh;
+  padding: 50px 75px;
+  display: flex;
+  flex-direction: column;
+  color: #ff97ba;
+  justify-content: space-between; /* Giãn đều nội dung */
+  align-items: center;
+  text-align: center;
+}
+
+/* Phong cách nổi bật */
+.highlight {
+  color: #4b62ff; /* Màu cam nổi bật */
+  font-weight: bold; /* In đậm */
+}
+/* Hiệu ứng khi hover */
+.highlight:hover {
+  color: #f89d79; /* Đổi màu chữ sang xanh */
+  transform: scale(1.1); /* Phóng to nhẹ */
+}
+
+.poem p {
+  font-size: 38px;
+  margin: 0 0;
+}
+
+.left-align {
+  align-self: flex-start; /* Căn trái */
+  text-align: left;
+}
+
+.center-align {
+  align-self: center; /* Căn giữa */
+  text-align: center;
+}
+
+/* Hình ảnh giữa thơ */
+/* Đảm bảo container cha định vị đúng */
+.flower-container {
+  position: relative; /* Để các bông hoa nằm trong vùng hình ảnh */
+  width: 100%;
+  height: auto;
+}
+
+.main-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  position: relative; /* Làm cơ sở cho các bông hoa nằm đè lên */
+  z-index: 2; /* Đảm bảo hình ảnh chính nằm dưới các bông hoa */
+}
+
+.flower {
+  z-index: 4;
+  position: absolute;
+  width: 1400px;
+  bottom: -100px;
+  left: 140px;
+  animation: spin 4s linear infinite;
+}
+
+
+/* Hiệu ứng xoay liên tục */
+@keyframes spin {
+  0% { transform: translate(0, 0px);}
+  50% { transform: translate(0, 30px);}
+  100% { transform: translate(0,-0px);}
+}
+
+/* Trang 2 */
+.poem {
+  min-height: 100vh; /* Chiều cao toàn màn hình */
+  display: flex; /* Sử dụng Flexbox */
+  flex-direction: column; /* Nội dung xếp theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  text-align: center;
+}
+
+.line-group {
+  display: flex; /* Sử dụng Flexbox */
+  flex-direction: column; /* Đặt hai câu thành hai dòng riêng */
+  align-items: center; /* Cả hai dòng nằm ở giữa */
+  margin-bottom: 5px; /* Khoảng cách giữa thơ và ảnh */
+}
+
+.left-align {
+  align-self: flex-start; /* Đẩy câu này về bên trái */
+  text-align: left; /* Căn chữ về trái */
+  width: 100%; /* Chiếm toàn bộ chiều ngang container */
+  max-width: 800px; /* Giới hạn chiều rộng */
+  padding-left: 10%; /* Khoảng cách từ viền trái */
+}
+
+.right-align {
+  align-self: flex-end; /* Đẩy câu này về bên phải */
+  text-align: right; /* Căn chữ về phải */
+  width: 100%; /* Chiếm toàn bộ chiều ngang container */
+  max-width: 800px; /* Giới hạn chiều rộng */
+  padding-right: 10%; /* Khoảng cách từ viền phải */
+}
+
+.center-align {
+  text-align: center; /* Căn chữ giữa */
+  margin: 10px 0; /* Tạo khoảng cách giữa các dòng */
+}
+
+.flower-container {
+  position: relative; /* Đặt container làm tham chiếu */
+  display: inline-block; /* Kích thước phụ thuộc vào nội dung bên trong */
+}
+
+.main-image {
+  display: block; /* Đảm bảo ảnh chính được hiển thị đầy đủ */
+  width: auto; /* Giữ nguyên kích thước gốc của ảnh */
+  height: auto;
+}
+
+
+/* Hình ảnh chính */
+.main-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  position: relative; /* Làm cơ sở cho ảnh con mắt */
+  z-index: 1; /* Đảm bảo ảnh chính nằm dưới */
+}
+
+/* Hình ảnh con mắt */
+.overlay-image {
+  position: absolute; /* Đặt hình con mắt nằm đè lên */
+  top: 65%; /* Điều chỉnh vị trí dọc */
+  left: 50%; /* Điều chỉnh vị trí ngang */
+  transform: translate(-50%, -50%); /* Căn giữa */
+  z-index: 2; /* Đặt trên ảnh chính */
+  cursor: pointer; /* Thay đổi con trỏ khi hover */
+  transition: opacity 0.3s ease, content 0.3s ease; /* Hiệu ứng hover */
+}
+
+/* Hiệu ứng hover */
+.overlay-image:hover {
+  content: url("../Assignment 1/img/Closed-eyes.png"); /* Thay đổi hình ảnh khi hover */
+}
+
+img {
+  max-width: 100%; /* Đảm bảo ảnh không vượt kích thước màn hình */
+  height: auto; /* Giữ tỷ lệ gốc */
+  margin: 20px 0; /* Khoảng cách giữa ảnh và các phần khác */
+}
+
+/* Mũi tên chuyển trang */
+.scroll-to-next-page {
+  position: relative;
+  bottom: 50px; /* Cách mép dưới 20px */
+  left: calc(100% - 150px); /* Cách mép phải 20px */
+  border: none; /* Không viền */
+  border-radius: 50%; /* Bo góc thành hình tròn */
+  width: 80px; /* Chiều rộng */
+  height: 80px; /* Chiều cao */
+  display: flex;
+  justify-content: center; /* Canh giữa nội dung theo chiều ngang */
+  align-items: center; /* Canh giữa nội dung theo chiều dọc */
+  font-size: 50px; /* Kích thước biểu tượng */
+  cursor: pointer; /* Con trỏ dạng nút nhấn */
+  color: #4b62ff; /* Màu chữ */
+  text-decoration: none; /* Bỏ gạch dưới của liên kết */
+  transition: background-color 0.3s ease; /* Hiệu ứng màu khi hover */
+}
+
+.scroll-to-next-page:hover {
+  background-color: #ffc3ab; /* Đổi màu nền khi hover */
+}
+
+/* Mũi tên quay lại trang trước */
+.scroll-to-previous-page {
+  position: relative;
+  bottom: 50px; /* Cách mép dưới 50px */
+  left: 50px; /* Cách mép trái 20px */
+  border: none; /* Không viền */
+  border-radius: 50%; /* Bo tròn thành hình tròn */
+  width: 80px; /* Chiều rộng */
+  height: 80px; /* Chiều cao */
+  display: flex;
+  justify-content: center; /* Canh giữa nội dung theo chiều ngang */
+  align-items: center; /* Canh giữa nội dung theo chiều dọc */
+  font-size: 50px; /* Kích thước biểu tượng */
+  color: #4b62ff; /* Màu chữ */
+  cursor: pointer; /* Con trỏ dạng nút nhấn */
+  text-decoration: none; /* Bỏ gạch chân của liên kết */
+  transition: background-color 0.3s ease; /* Hiệu ứng hover */
+}
+
+.scroll-to-previous-page:hover {
+  background-color: #ffc3ab; /* Đổi màu nền khi hover */
+}
+
+
+/* Hiệu ứng chữ chạy ngang */
+.marquee {
+  position: relative; /* Cố định ở cuối trang */
+  bottom: 0; /* Đặt ở đáy màn hình */
+  left: 0; /* Bắt đầu từ mép trái */
+  width: 100%; /* Bao phủ toàn bộ chiều rộng màn hình */
+  overflow: hidden; /* Ẩn phần chữ nằm ngoài khung */
+  background-color: #a2b3fe; /* Nền mờ */
+  padding: 10px 0;
+  z-index: 1000; /* Đảm bảo luôn hiển thị trên cùng */
+}
+
+.the-end {
+  display: inline-block;
+  font-size: 2rem; /* Kích thước chữ */
+  font-family: "Dancing Script", cursive; /* Phông chữ mềm mại */
+  color: white; /* Màu chữ */
+  white-space: nowrap; /* Không cho chữ xuống dòng */
+  animation: marquee 30s linear infinite; /* Tốc độ chạy 8 giây/lượt */
+  will-change: transform; /* Tối ưu hiệu suất */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%); /* Bắt đầu từ ngoài mép phải */
+  }
+  to {
+    transform: translateX(-100%); /* Kết thúc ngoài mép trái */
+  }
+}
+
+body {
+  cursor: url(.//img/cursor-default.png) 16 16, auto;
+}
+body:active {
+  cursor: url(.//img/cursor-click.png) 16 16, auto;
+}
